@@ -105,6 +105,7 @@ class RoundController extends Controller
             $result = \App\Card::getCountResult($cardObject, $cardListCollection);
         } catch (\Exception $e) {            
             $result = "Sorry, there was an error: " . $e->getMessage();
+            http_response_code(400);
         }
         return  $result;
     }
